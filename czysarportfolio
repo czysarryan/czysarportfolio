@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Czysar Ryan Orani | Programming Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* =========================
+
+           GENERAL STYLE
+
+        ========================== */
+
+        html {
+
+            scroll-behavior: smooth;
+
+            scroll-padding-top: 80px;
+
+        }
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #f0fffc;
+
+            color: #123c3a;
+
+        }
+
+        /* =========================
+
+           NAVIGATION
+
+        ========================== */
+
+        .navbar {
+
+            background: linear-gradient(90deg, #008f83, #00bfa6);
+
+        }
+
+        .navbar-brand {
+
+            font-weight: bold;
+
+            color: white !important;
+
+        }
+
+        .menu-btn {
+
+            color: white;
+
+            border: 1px solid white;
+
+        }
+
+        .menu-btn:hover {
+
+            background-color: white;
+
+            color: #008f83;
+
+        }
+
+        .offcanvas {
+
+            background: #eafff9;
+
+        }
+
+        .offcanvas-title {
+
+            color: #008f83;
+
+            font-weight: bold;
+
+        }
+
+        .nav-link {
+
+            color: #145c56;
+
+            font-size: 18px;
+
+            font-weight: 500;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+
+        }
+
+        .nav-link:hover {
+
+            background-color: #00a896;
+
+            color: white;
+
+        }
+
+        /* =========================
+
+           HOME / PROFILE
+
+        ========================== */
+
+        #profile {
+
+            min-height: 100vh;
+
+            padding: 100px 20px 60px;
+
+            background: linear-gradient(135deg, #dffaf5, #b9f3e5);
+
+        }
+
+        .portfolio-title {
+
+            color: #007f73;
+
+            font-size: 2.5rem;
+
+            font-weight: bold;
+
+        }
+
+        .profile-label {
+
+            display: inline-block;
+
+            background-color: #008f83;
+
+            color: white;
+
+            padding: 7px 20px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+
+        }
+
+        .profile-image {
+
+            width: 210px;
+
+            height: 210px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 7px solid white;
+
+            box-shadow: 0 8px 25px rgba(0, 128, 116, 0.3);
+
+            cursor: pointer;
+
+            transition: 0.4s;
+
+        }
+
+        .profile-image:hover {
+
+            transform: scale(1.06);
+
+        }
+
+        .profile-name {
+
+            color: #00695c;
+
+            font-size: 2rem;
+
+            font-weight: bold;
+
+            margin-top: 15px;
+
+        }
+
+        .hook {
+
+            max-width: 750px;
+
+            margin: 30px auto;
+
+            font-size: 1.15rem;
+
+            line-height: 1.8;
+
+            color: #285c57;
+
+        }
+
+        .highlight {
+
+            color: #008f83;
+
+            font-weight: bold;
+
+        }
+
+        /* =========================
+
+           SECTION STYLE
+
+        ========================== */
+
+        .section {
+
+            padding: 90px 20px;
+
+        }
+
+        .section-title {
+
+            color: #007f73;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+            position: relative;
+
+        }
+
+        .section-title::after {
+
+            content: "";
+
+            display: block;
+
+            width: 70px;
+
+            height: 4px;
+
+            background: #00a896;
+
+            margin: 12px auto;
+
+            border-radius: 10px;
+
+        }
+
+        /* =========================
+
+           EDUCATION
+
+        ========================== */
+
+        #education {
+
+            background: white;
+
+        }
+
+        .education-card {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            border: none;
+
+            border-left: 6px solid #00a896;
+
+            border-radius: 15px;
+
+            background: #effffc;
+
+            box-shadow: 0 8px 25px rgba(0, 128, 116, 0.12);
+
+            padding: 30px;
+
+        }
+
+        .education-icon {
+
+            font-size: 45px;
+
+            color: #009688;
+
+        }
+
+        .education-text {
+
+            font-size: 1.15rem;
+
+            line-height: 1.8;
+
+            color: #285c57;
+
+        }
+
+        /* =========================
+
+           PROJECTS
+
+        ========================== */
+
+        #projects {
+
+            background: linear-gradient(135deg, #dffaf5, #effff9);
+
+        }
+
+        .project-card {
+
+            height: 100%;
+
+            border: none;
+
+            border-radius: 18px;
+
+            background: white;
+
+            box-shadow: 0 7px 20px rgba(0, 128, 116, 0.15);
+
+            transition: 0.35s;
+
+            overflow: hidden;
+
+        }
+
+        .project-card:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow: 0 15px 30px rgba(0, 128, 116, 0.25);
+
+        }
+
+        .project-top {
+
+            background: linear-gradient(135deg, #008f83, #00bfa6);
+
+            color: white;
+
+            padding: 20px;
+
+        }
+
+        .project-number {
+
+            font-size: 14px;
+
+            opacity: 0.9;
+
+        }
+
+        .project-title {
+
+            font-weight: bold;
+
+            margin-top: 5px;
+
+        }
+
+        .project-body {
+
+            padding: 25px;
+
+        }
+
+        .tech-badge {
+
+            display: inline-block;
+
+            background-color: #d5f8f0;
+
+            color: #007f73;
+
+            padding: 5px 12px;
+
+            margin: 3px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+        }
+
+        .project-description {
+
+            color: #4c6865;
+
+            line-height: 1.7;
+
+            margin-top: 15px;
+
+        }
+
+        /* =========================
+
+           CONTACT
+
+        ========================== */
+
+        #contact {
+
+            background: #063f3b;
+
+            color: white;
+
+            padding: 60px 20px;
+
+        }
+
+        .contact-title {
+
+            color: #75f2df;
+
+            font-weight: bold;
+
+        }
+
+        .contact-item {
+
+            margin: 15px 0;
+
+            font-size: 1.05rem;
+
+        }
+
+        .contact-item i {
+
+            color: #65e7d4;
+
+            margin-right: 10px;
+
+            font-size: 20px;
+
+        }
+
+        .contact-link {
+
+            color: white;
+
+            text-decoration: none;
+
+        }
+
+        .contact-link:hover {
+
+            color: #65e7d4;
+
+        }
+
+        /* =========================
+
+           IMAGE MODAL
+
+        ========================== */
+
+        .modal-content {
+
+            background: transparent;
+
+            border: none;
+
+        }
+
+        #imageModal .modal-dialog {
+
+            width: fit-content;
+
+            max-width: 90vw;
+
+        }
+
+        .expanded-image {
+
+            max-height: 85vh;
+
+            max-width: 90%;
+
+            object-fit: contain;
+
+            border-radius: 15px;
+
+        }
+
+        /* =========================
+
+           BACK TO TOP
+
+        ========================== */
+
+        .back-top {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            background: #008f83;
+
+            color: white;
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+        }
+
+        .back-top:hover {
+
+            background: #00695c;
+
+            color: white;
+
+        }
+
+        footer {
+
+            background: #042d2a;
+
+            color: #bdeee6;
+
+            text-align: center;
+
+            padding: 15px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- =========================
+
+     NAVIGATION BAR
+
+========================== -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#profile">
+
+            Czysar Ryan Orani
+
+        </a>
+
+        <!-- FUNCTIONING MENU BUTTON -->
+
+        <button class="btn menu-btn"
+
+                type="button"
+
+                data-bs-toggle="offcanvas"
+
+                data-bs-target="#menu">
+
+            <i class="bi bi-list"></i>
+
+            Menu
+
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- =========================
+
+     OFFCANVAS MENU
+
+========================== -->
+
+<div class="offcanvas offcanvas-end"
+
+     tabindex="-1"
+
+     id="menu">
+
+    <div class="offcanvas-header">
+
+        <h5 class="offcanvas-title">
+
+            <i class="bi bi-code-slash"></i>
+
+            Portfolio Menu
+
+        </h5>
+
+        <button type="button"
+
+                class="btn-close"
+
+                data-bs-dismiss="offcanvas">
+
+        </button>
+
+    </div>
+
+    <div class="offcanvas-body">
+
+        <p class="text-muted">
+
+            Navigate through my portfolio.
+
+        </p>
+
+        <!-- PROFILE -->
+
+        <a class="nav-link"
+
+           href="#profile"
+
+           data-bs-dismiss="offcanvas">
+
+            <i class="bi bi-person-circle"></i>
+
+            Profile
+
+        </a>
+
+        <!-- EDUCATION -->
+
+        <a class="nav-link"
+
+           href="#education"
+
+           data-bs-dismiss="offcanvas">
+
+            <i class="bi bi-mortarboard-fill"></i>
+
+            Education
+
+        </a>
+
+        <!-- PROJECTS -->
+
+        <a class="nav-link"
+
+           href="#projects"
+
+           data-bs-dismiss="offcanvas">
+
+            <i class="bi bi-folder-fill"></i>
+
+            Projects
+
+        </a>
+
+        <hr>
+
+        <a class="nav-link"
+
+           href="#contact"
+
+           data-bs-dismiss="offcanvas">
+
+            <i class="bi bi-envelope-fill"></i>
+
+            Contact
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- =========================
+
+     PROFILE / HOME SECTION
+
+========================== -->
+
+<section id="profile">
+
+    <div class="container">
+
+        <!-- TITLE AT UPPER LEFT -->
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h1 class="portfolio-title">
+
+                    Programming Portfolio
+
+                </h1>
+
+                <p class="text-muted">
+
+                    A collection of my programming projects,
+
+                    skills, and learning experiences.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- PROFILE LABEL -->
+
+        <div class="text-center mt-4">
+
+            <span class="profile-label">
+
+                <i class="bi bi-person"></i>
+
+                Profile
+
+            </span>
+
+        </div>
+
+        <!-- PROFILE IMAGE -->
+
+        <div class="text-center">
+
+            <img src="czy.jpg"
+
+                 alt="Czysar Ryan Orani Profile Picture"
+
+                 class="profile-image"
+
+                 data-bs-toggle="modal"
+
+                 data-bs-target="#imageModal">
+
+            <h2 class="profile-name">
+
+                Czysar Ryan Orani
+
+            </h2>
+
+        </div>
+
+        <!-- BRIEF HOOK -->
+
+        <div class="hook text-center">
+
+            <p>
+
+                Welcome to my <span class="highlight">
+
+                Programming Portfolio</span>.
+
+                I am an Information Technology student who is
+
+                continuously learning and developing my skills
+
+                in programming, web development, and system development.
+
+            </p>
+
+            <p>
+
+                This portfolio showcases some of the projects
+
+                and applications I have created throughout my
+
+                learning journey.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+
+     IMAGE MODAL
+
+========================== -->
+
+<div class="modal fade"
+
+     id="imageModal"
+
+     tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-body text-center">
+
+                <img src="czy.jpg"
+
+                     alt="Expanded Profile Picture"
+
+                     class="expanded-image">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+
+     EDUCATION SECTION
+
+========================== -->
+
+<section id="education" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+
+            Education
+
+        </h2>
+
+        <div class="education-card">
+
+            <div class="text-center mb-3">
+
+                <i class="bi bi-mortarboard-fill education-icon"></i>
+
+            </div>
+
+            <p class="education-text text-center">
+
+                College level. Third year student. I am taking a
+
+                Bachelor's degree in Information Technology major
+
+                in Web and Mobile App Development.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+
+     PROJECTS SECTION
+
+========================== -->
+
+<section id="projects" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+
+            Projects
+
+        </h2>
+
+        <p class="text-center text-muted mb-5">
+
+            Some of the programs, websites, and systems I have created.
+
+        </p>
+
+        <div class="row g-4">
+
+            <!-- PROJECT 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            PROJECT 01
+
+                        </span>
+
+                        <h4 class="project-title">
+
+                            Java Programs (Basics)
+
+                        </h4>
+
+                    </div>
+
+                    <div class="project-body">
+
+                        <span class="tech-badge">Java</span>
+
+                        <p class="project-description">
+
+                            A collection of basic Java programs created
+
+                            to practice programming fundamentals,
+
+                            logic, variables, conditions, and loops.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            PROJECT 02
+
+                        </span>
+
+                        <h4 class="project-title">
+
+                            Grade Calculator
+
+                        </h4>
+
+                    </div>
+
+                    <div class="project-body">
+
+                        <span class="tech-badge">HTML</span>
+
+                        <span class="tech-badge">CSS</span>
+
+                        <span class="tech-badge">JavaScript</span>
+
+                        <p class="project-description">
+
+                            A simple calculator designed to compute
+
+                            and display student grades based on
+
+                            entered scores.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            PROJECT 03
+
+                        </span>
+
+                        <h4 class="project-title">
+
+                            Student Information
+
+                        </h4>
+
+                    </div>
+
+                    <div class="project-body">
+
+                        <span class="tech-badge">HTML</span>
+
+                        <span class="tech-badge">CSS</span>
+
+                        <span class="tech-badge">Bootstrap</span>
+
+                        <p class="project-description">
+
+                            A simple web-based project for displaying
+
+                            and organizing basic student information
+
+                            in a clean interface.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            PROJECT 04
+
+                        </span>
+
+                        <h4 class="project-title">
+
+                            CITE Page
+
+                        </h4>
+
+                    </div>
+
+                    <div class="project-body">
+
+                        <span class="tech-badge">HTML</span>
+
+                        <span class="tech-badge">CSS</span>
+
+                        <span class="tech-badge">Bootstrap</span>
+
+                        <p class="project-description">
+
+                            A page containing the achievements of the
+
+                            College of Information Technology Education.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 5 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            PROJECT 05
+
+                        </span>
+
+                        <h4 class="project-title">
+
+                            EFarm Market
+
+                        </h4>
+
+                    </div>
+
+                    <div class="project-body">
+
+                        <span class="tech-badge">HTML</span>
+
+                        <span class="tech-badge">CSS</span>
+
+                        <span class="tech-badge">Bootstrap</span>
+
+                        <p class="project-description">
+
+                            An online shopping platform designed
+
+                            for local products and goods in
+
+                            Nueva Vizcaya.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 6 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            PROJECT 06
+
+                        </span>
+
+                        <h4 class="project-title">
+
+                            Calculator
+
+                        </h4>
+
+                    </div>
+
+                    <div class="project-body">
+
+                        <span class="tech-badge">HTML</span>
+
+                        <span class="tech-badge">CSS</span>
+
+                        <span class="tech-badge">JavaScript</span>
+
+                        <p class="project-description">
+
+                            A simple interactive calculator capable
+
+                            of performing common mathematical
+
+                            operations.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT 7 -->
+
+            <div class="col-md-6 col-lg-4 mx-auto">
+
+                <div class="project-card">
+
+                    <div class="project-top">
+
+                        <span class="project-number">
+
+                            PROJECT 07
+
+                        </span>
+
+                        <h4 class="project-title">
+
+                            DSWD Aid Assistance and Appointment System
+
+                        </h4>
+
+                    </div>
+
+                    <div class="project-body">
+
+                        <span class="tech-badge">HTML</span>
+
+                        <span class="tech-badge">CSS</span>
+
+                        <span class="tech-badge">Bootstrap</span>
+
+                        <p class="project-description">
+
+                            A proposed system designed to help
+
+                            organize the queue for DSWD beneficiaries
+
+                            and improve the appointment process.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+
+     CONTACT SECTION
+
+========================== -->
+
+<section id="contact">
+
+    <div class="container text-center">
+
+        <h2 class="contact-title mb-4">
+
+            Contact Information
+
+        </h2>
+
+        <div class="contact-item">
+
+            <i class="bi bi-envelope-fill"></i>
+
+            <a href="mailto:czysarryan27@gmail.com"
+
+               class="contact-link">
+
+                czysarryan27@gmail.com
+
+            </a>
+
+        </div>
+
+        <div class="contact-item">
+
+            <i class="bi bi-telephone-fill"></i>
+
+            <a href="tel:+639753479855"
+
+               class="contact-link">
+
+                +63 975 347 9855
+
+            </a>
+
+        </div>
+
+        <div class="contact-item">
+
+            <i class="bi bi-facebook"></i>
+
+            <span>
+
+                Czysar Orani
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+
+     FOOTER
+
+========================== -->
+
+<footer>
+
+    <p class="mb-0">
+
+        © 2026 Czysar Ryan Orani | Programming Portfolio
+
+    </p>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<a href="#profile"
+
+   class="back-top"
+
+   title="Back to Top">
+
+    <i class="bi bi-arrow-up"></i>
+
+</a>
+
+<!-- Bootstrap JavaScript -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+// =========================
+
+// PORTFOLIO NAVIGATION FUNCTION
+
+// =========================
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const navLinks = document.querySelectorAll('.offcanvas .nav-link');
+
+  const menu = document.getElementById('menu');
+
+  navLinks.forEach(function (link) {
+
+    link.addEventListener('click', function (event) {
+
+      const targetId = link.getAttribute('href');
+
+      const target = document.querySelector(targetId);
+
+      if (target) {
+
+        event.preventDefault();
+
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Close the Bootstrap offcanvas menu after navigation.
+
+        if (menu) {
+
+          const offcanvas = bootstrap.Offcanvas.getInstance(menu) ||
+
+            new bootstrap.Offcanvas(menu);
+
+          offcanvas.hide();
+
+        }
+
+        // Update the browser URL without jumping.
+
+        history.pushState(null, '', targetId);
+
+      }
+
+    });
+
+  });
+
+  // Make the Back to Top button smoothly return to Profile.
+
+  const backTop = document.querySelector('.back-top');
+
+  if (backTop) {
+
+    backTop.addEventListener('click', function (event) {
+
+      event.preventDefault();
+
+      const profile = document.getElementById('profile');
+
+      if (profile) {
+
+        profile.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        history.pushState(null, '', '#profile');
+
+      }
+
+    });
+
+  }
+
+});
+
+</script>
+
+</body>
+
+</html>
